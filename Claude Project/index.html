@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darius Gheorghian - Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon2.png">
+</head>
+<body>
+
+<div id="progressBar"></div>
+
+<!-- ── NAVIGATION ── -->
+<nav id="nav">
+    <div class="container">
+        <a href="#hero" class="nav-logo">Darius<span>.</span>Gheorghian</a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about"    data-i18n="nav_about">About</a></li>
+            <li><a href="#services" data-i18n="nav_services">Services</a></li>
+            <li><a href="#contact"  data-i18n="nav_contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <!--
+              LANGUAGE TOGGLE
+              JS reads the current lang from <html lang="...">,
+              then swaps every [data-i18n] element on click.
+            -->
+            <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+                <span class="lang-opt" data-lang="en">EN</span>
+                <span class="lang-divider">|</span>
+                <span class="lang-opt" data-lang="ro">RO</span>
+            </button>
+
+            <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ── HERO ── -->
+<section id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-orb" data-parallax-speed="0.04"></div>
+    <div class="hero-noise"></div>
+    <div id="heroParticles"></div>
+
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="hero-badge" data-i18n="hero_badge">Available for projects</div>
+
+            <!-- EDIT: replace with your real name -->
+            <h1 class="hero-name">Darius<em>Gheorghian</em></h1>
+
+            <!--
+              The typewriter target is left empty — JS fills it.
+              The surrounding text is translated via data-i18n on
+              two wrapper spans so the JS can swap each half.
+            -->
+            <p class="hero-sub">
+                <span data-i18n="hero_sub_before">I craft</span>&nbsp;<strong id="typewriter"></strong><span class="tw-cursor"></span>&nbsp;<span data-i18n="hero_sub_after">for ambitious people.</span>
+            </p>
+
+            <div class="hero-ctas">
+                <a href="#services" class="btn btn-primary magnetic" data-i18n="hero_cta_work">View My Work →</a>
+                <a href="#contact"  class="btn btn-ghost  magnetic" data-i18n="hero_cta_hire">Hire Me</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="scroll-cue">
+        <div class="scroll-line"></div>
+        <span data-i18n="scroll">Scroll</span>
+    </div>
+</section>
+
+
+<!-- ── ABOUT ── -->
+<section id="about">
+    <div class="container">
+        <div class="about-grid">
+
+            <div class="reveal-left" style="position:relative">
+                <div class="about-photo">
+                    <!--
+                      Replace this <span> with your real photo:
+                      <img src="photo.jpg" alt="Your Name"
+                           style="width:100%;height:100%;object-fit:cover;">
+                    -->
+                    <img src="img/ME.png" alt="">
+                </div>
+                <div class="about-frame"></div>
+            </div>
+
+            <div class="about-text reveal-right">
+                <div class="eyebrow" data-scramble data-i18n="about_eyebrow">About Me</div>
+
+                <!--
+                  data-i18n-html is used for elements that contain
+                  child HTML tags (like <em>). JS sets innerHTML
+                  instead of textContent so the tags are preserved.
+                -->
+                <h2 class="section-title reveal" data-i18n-html="about_title" style="margin-bottom:1.8rem">
+                    Crafting <em>digital products</em> that leave a mark
+                </h2>
+
+                <div class="reveal">
+                    <!-- EDIT: your actual bio -->
+                    <p data-i18n="about_p1">Hello i am a good developer in bucharest my name is chchc  u love vcodng [Your City], passionate about building elegant, high-performance web applications.</p>
+                    <p data-i18n="about_p2">With X years of hands-on experience I turn complex ideas into clean, maintainable code. I care as much about developer ergonomics as user experience.</p>
+                    <p data-i18n="about_p3">When I'm not shipping code you'll find me exploring new frameworks, contributing to open source, or perfecting my morning coffee ritual.</p>
+                </div>
+
+                <div class="reveal" style="margin-top:2.2rem">
+                    <a href="#contact" class="btn btn-primary magnetic" data-i18n="about_cta">Let's Work Together →</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ── SERVICES ── -->
+<section id="services">
+    <div class="container">
+        <div class="eyebrow reveal" data-scramble data-i18n="services_eyebrow">What I Do</div>
+        <h2 class="section-title reveal" data-i18n-html="services_title">Services I <em>offer</em></h2>
+
+        <!-- EDIT: update cards to your real skills -->
+        <div class="services-grid stagger">
+
+            <div class="service-card tilt">
+                <span class="service-num">01</span>
+                <span class="service-icon">⚡</span>
+                <h3 class="service-title" data-i18n="s1_title">Frontend Development</h3>
+                <p class="service-desc"  data-i18n="s1_desc">Pixel-perfect, responsive interfaces built with modern frameworks. React, Vue, or vanilla — fast, accessible UIs.</p>
+            </div>
+
+            <div class="service-card tilt">
+                <span class="service-num">02</span>
+                <span class="service-icon">🛠</span>
+                <h3 class="service-title" data-i18n="s2_title">Backend & APIs</h3>
+                <p class="service-desc"  data-i18n="s2_desc">Scalable server-side solutions, RESTful and GraphQL APIs, and database architecture. Built to last.</p>
+            </div>
+
+            <div class="service-card tilt">
+                <span class="service-num">03</span>
+                <span class="service-icon">🚀</span>
+                <h3 class="service-title" data-i18n="s3_title">Full-Stack Apps</h3>
+                <p class="service-desc"  data-i18n="s3_desc">End-to-end from brief to deployment. Auth, payments, real-time features — handled with care and craft.</p>
+            </div>
+
+            <div class="service-card tilt">
+                <span class="service-num">04</span>
+                <span class="service-icon">🔍</span>
+                <h3 class="service-title" data-i18n="s4_title">Consulting & Review</h3>
+                <p class="service-desc"  data-i18n="s4_desc">Architecture reviews, performance audits, and technical consulting for teams that want to level up.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+    <div class="container">
+        <div class="contact-wrap">
+
+            <div class="eyebrow reveal" data-scramble style="justify-content:center" data-i18n="contact_eyebrow">Get In Touch</div>
+            <h2 class="section-title reveal" data-i18n-html="contact_title">Ready to build <em>something great?</em></h2>
+
+            <p class="contact-sub reveal" data-i18n="contact_sub">
+                I'm currently open to new freelance projects. Whether you have a detailed brief,
+                a rough idea, or just want to explore possibilities — I'd love to hear from you.
+            </p>
+
+            <form class="contact-form stagger reveal" id="contactForm"
+                  action="https://formspree.io/f/xjgzpgwz"
+                  method="POST">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fname" data-i18n="form_name_label">Your Name</label>
+                        <input type="text" id="fname" name="name"
+                               data-i18n-placeholder="form_name_ph"
+                               placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="femail" data-i18n="form_email_label">Email Address</label>
+                        <input type="email" id="femail" name="email"
+                               data-i18n-placeholder="form_email_ph"
+                               placeholder="john@company.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fsubject" data-i18n="form_subject_label">Subject</label>
+                    <input type="text" id="fsubject" name="subject"
+                           data-i18n-placeholder="form_subject_ph"
+                           placeholder="Project idea, consultation, collab...">
+                </div>
+
+                <div class="form-group">
+                    <label for="fmessage" data-i18n="form_message_label">Message</label>
+                    <textarea id="fmessage" name="message" rows="5"
+                              data-i18n-placeholder="form_message_ph"
+                              placeholder="Tell me about your project — budget, timeline, and what you're building."></textarea>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary magnetic" id="submitBtn" data-i18n="form_submit">Send Message →</button>
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <!-- EDIT: your name and year -->
+        <p data-i18n="footer">© 2025 Your Name — Designed & built with care</p>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
